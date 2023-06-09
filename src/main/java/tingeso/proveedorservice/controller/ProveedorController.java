@@ -22,13 +22,14 @@ public class ProveedorController {
         return ResponseEntity.ok(proveedores);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Proveedor> getById(@PathVariable(value = "id") int id){
-        Proveedor proveedor = proveedorService.getProveedorById(id);
+    @GetMapping("/{codigo}")
+    public ResponseEntity<Proveedor> getByCodigo(@PathVariable(value = "codigo") String codigo){
+        Proveedor proveedor = proveedorService.getProveedorByCodigo(codigo);
         if(proveedor == null)
             return ResponseEntity.notFound().build();
         return ResponseEntity.ok(proveedor);
     }
+
 
     @PostMapping()
     public ResponseEntity<Proveedor> createProveedor(@RequestBody Proveedor proveedor){

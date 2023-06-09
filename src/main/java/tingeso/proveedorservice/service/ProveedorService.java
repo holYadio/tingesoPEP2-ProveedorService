@@ -21,7 +21,7 @@ public class ProveedorService {
         return proveedorRepository.save(proveedor);
     }
 
-    public Proveedor getProveedorById(int id) {
-        return proveedorRepository.findById(id).orElse(null);
+    public Proveedor getProveedorByCodigo(String codigo) {
+        return proveedorRepository.findByCodigo(codigo);
     }
 }
